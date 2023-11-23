@@ -1,0 +1,216 @@
+[
+    {
+        "id": "veh_forgeweldpressrig",
+        "breaks_into": [
+          { "count": [ 4, 5 ], "item": "steel_lump" },
+          { "count": [ 4, 6 ], "item": "steel_chunk" },
+          { "count": [ 4, 6 ], "item": "scrap" }
+        ],
+        "broken_color": "light_gray",
+        "broken_symbol": "x",
+        "categories": [ "utility" ],
+        "color": "red",
+        "damage_modifier": 10,
+        "damage_reduction": { "all": 29 },
+        "description": "An all-in-one crafting setup with foldout toolsets designed for easy access yet tight storage. Capable of welding, soldering, forging, kilning, and more.",
+        "durability": 80,
+        "flags": [ "CARGO", "OBSTACLE" ],
+        "pseudo_tools": [ { "id": "pseudo_veh_forge" }, { "id": "pseudo_veh_oil_press" }, { "id": "pseudo_veh_kiln" }, { "id": "welder", "hotkey": "w" }, { "id": "soldering_iron", "hotkey": "s" } ],
+        "item": "forgekilnweldpressrig",
+        "location": "center",
+        "looks_like": "f_forge_rock",
+        "name": { "str": "multi crafting rig" },
+        "requirements": {
+          "install": { "skills": [ [ "mechanics", 6 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+          "removal": { "skills": [ [ "mechanics", 4 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+          "repair": {
+            "skills": [ [ "mechanics", 4 ] ],
+            "time": "60 m",
+            "using": [ [ "repair_welding_standard", 2 ], [ "soldering_standard", 15 ] ]
+          }
+        },
+        "size": "50 L",
+        "symbol": "&",
+        "type": "vehicle_part"
+      },
+      {
+        "id": "forgekilnweldpressrig",
+        "looks_like": "kitchen_unit", 
+        "symbol":"&",
+        "color":"red",
+        "type": "GENERIC",
+        "name": { "str": "mounted multi crafting rig" },
+        "description": "An all-in-one crafting setup with foldout toolsets designed for easy access yet tight storage. Capable of welding, soldering, forging, kilning, and more.",
+        "weight": "36000 g",
+        "volume": "36 L",
+        "price": 8000,
+        "price_postapoc": 250
+      },
+      {
+        "type": "recipe",
+        "activity_level": "LIGHT_EXERCISE",
+        "result": "forgekilnweldpressrig",
+        "category": "CC_OTHER",
+        "subcategory": "CSC_OTHER_PARTS",
+        "skill_used": "electronics",
+        "skills_required": [ "fabrication", 9 ],
+        "difficulty": 0,
+        "time": "30 m",
+        "reversible": true,
+        "decomp_learn": 2,
+        "book_learn": [ [ "manual_electronics", 6 ], [ "manual_mechanics", 6 ] ],
+        "using": [ [ "soldering_standard", 4 ], [ "steel_tiny", 1 ] ],
+        "proficiencies": [ { "proficiency": "prof_elec_soldering" } ],
+        "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
+        "components": [ [ [ "weldrig", 1 ] ], [ [ "forgerig", 1 ] ], [ [ "kilnrig", 1 ] ], [ [ "oil_press_electric", 1 ] ] ]
+      },
+      {
+        "type": "vehicle_part",
+        "id": "cargo_space_squared",
+        "name": { "str": "maximized cargo space" },
+        "symbol": "=",
+        "looks_like": "cargo_space",
+        "categories": [ "cargo" ],
+        "color": "light_gray",
+        "broken_symbol": "#",
+        "broken_color": "dark_gray",
+        "durability": 250,
+        "size": "250000 L",
+        "item": "cargo_rack_squared",
+        "location": "center",
+        "requirements": {
+          "install": { "skills": [ [ "mechanics", 1 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
+          "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+          "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "repair_welding_standard", 4 ] ] }
+        },
+        "flags": [ "BOARDABLE", "CARGO", "COVERED" ],
+        "breaks_into": [
+          { "item": "steel_lump", "count": [ 6, 8 ] },
+          { "item": "steel_chunk", "count": [ 6, 8 ] },
+          { "item": "scrap", "count": [ 6, 8 ] }
+        ],
+        "damage_reduction": { "all": 28 }
+      },
+      {
+        "type": "GENERIC",
+        "id": "cargo_rack_squared",
+        "name": { "str": "maximized cargo carrier" },
+        "description": "A heavy frame outfitted with multiple sets of tie-downs and attachment points for carrying cargo, combined into a multi-leveled selectable turntable controlled by winches.",
+        "weight": "85330 g",
+        "to_hit": -4,
+        "color": "cyan",
+        "symbol": "]",
+        "material": [ "steel", "plastic" ],
+        "volume": "50 L",
+        "bashing": 2,
+        "category": "veh_parts",
+        "price": 40000,
+        "price_postapoc": 500
+      },
+      {
+        "type": "recipe",
+        "activity_level": "MODERATE_EXERCISE",
+        "result": "cargo_rack_squared",
+        "category": "CC_OTHER",
+        "subcategory": "CSC_OTHER_PARTS",
+        "skill_used": "fabrication",
+        "skills_required": [ "mechanics", 1 ],
+        "difficulty": 4,
+        "time": "1 h",
+        "reversible": true,
+        "autolearn": true,
+        "using": [ [ "welding_standard", 10 ] ],
+        "proficiencies": [
+          { "proficiency": "prof_metalworking" },
+          { "proficiency": "prof_welding_basic", "fail_multiplier": 1.5 },
+          { "proficiency": "prof_welding" }
+        ],
+        "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SAW_M", "level": 1 }, { "id": "WRENCH", "level": 1 } ],
+        "components": [ [ [ "cargo_rack", 5 ] ] ]
+      },
+      {
+        "type": "vehicle_part",
+        "id": "minifridge_squared",
+        "name": { "str": "maximized minifridge" },
+        "symbol": "H",
+        "looks_like": "minifridge",
+        "categories": [ "cargo" ],
+        "color": "light_blue",
+        "broken_symbol": "#",
+        "broken_color": "light_blue",
+        "damage_modifier": 80,
+        "durability": 100,
+        "description": "A refridgerator designed similarly to the maximized cargo carrier, with winchable shelving that runs into the body of the vehicle itself.",
+        "//": "Use average consumption, not the max on the appliance rating plate. 30W ~ 260kWh per annum",
+        "epower": -30,
+        "size": "10000 L",
+        "item": "minifridge_squared",
+        "location": "center",
+        "requirements": {
+          "install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+          "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+          "repair": {
+            "skills": [ [ "mechanics", 4 ] ],
+            "time": "60 m",
+            "using": [ [ "repair_welding_standard", 2 ], [ "soldering_standard", 5 ] ]
+          }
+        },
+        "flags": [ "CARGO", "OBSTACLE", "FRIDGE", "COVERED", "ENABLED_DRAINS_EPOWER" ],
+        "breaks_into": [
+          { "item": "steel_lump", "count": [ 8, 13 ] },
+          { "item": "steel_chunk", "count": [ 8, 13 ] },
+          { "item": "scrap", "count": [ 8, 13 ] },
+          { "item": "hose", "prob": 50 },
+          { "item": "motor_tiny", "prob": 25 }
+        ],
+        "damage_reduction": { "all": 32 }
+      },
+      {
+        "type": "GENERIC",
+        "copy-from": "washing_machine",
+        "id": "minifridge_squared",
+        "name": { "str": "maximized minifridge" },
+        "description": "A refridgerator designed similarly to the maximized cargo carrier, with winchable shelving that runs into the body of the vehicle itself.",
+        "insulation": 2
+      },
+      {
+        "result": "minifridge_squared",
+        "type": "recipe",
+        "activity_level": "MODERATE_EXERCISE",
+        "copy-from": "minifreezer",
+        "skills_required": [ "fabrication", 4 ],
+        "proficiencies": [ { "proficiency": "prof_plasticworking", "required": false, "time_multiplier": 1.1, "learning_time_multiplier": 0.1 } ],
+        "qualities": [
+          { "id": "HAMMER", "level": 2 },
+          { "id": "SAW_M", "level": 1 },
+          { "id": "DRILL", "level": 1 },
+          { "id": "SCREW", "level": 1 },
+          { "id": "WRENCH", "level": 1 }
+        ],
+        "components": [
+          [ [ "cargo_rack_squared", 1 ] ],
+          [ [ "minifridge", 1 ] ]
+        ]
+      },
+      {
+        "id": "stowboard_squared",
+        "type": "vehicle_part",
+        "name": { "str": "maximized stow board" },
+        "looks_like": "stowboard",
+        "item": "cargo_rack_squared",
+        "color": "white",
+        "broken_symbol": "#",
+        "broken_color": "light_gray",
+        "durability": 80,
+        "description": "A metal wall with insane storage potential designed with a fractal mechanism that sorts things into smaller and smaller chambers by size. Cannot be constructed in a heavy duty format due to the immensely intricate design of the mechanism.",
+        "size": "10000 L",
+        "requirements": {
+          "install": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] },
+          "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+          "repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "repair_welding_standard", 2 ] ] }
+        },
+        "categories": [ "cargo" ],
+        "flags": [ "OBSTACLE", "NO_ROOF_NEEDED", "OPAQUE", "CARGO", "COVERED", "FULL_BOARD", "LOCKABLE_CARGO" ],
+        "damage_reduction": { "all": 7 }
+      }
+]

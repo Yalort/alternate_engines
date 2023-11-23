@@ -1,0 +1,134 @@
+[
+    {
+        "id": "mycelium_cracking_engine",
+        "type": "vehicle_part",
+        "item": "v6_mushroom",
+        "symbol": "8",
+        "description": "A powerful alternative engine that runs on a nutrient slurry by feeding it into a mycelium matrix. Highly powerful and sustainable, but extremely challenging to create.",
+        "durability": 400,
+        "epower": -250,
+        "power": 14920000,
+        "energy_consumption": "373000 W",
+        "m2c": 90,
+        "categories": [ "movement" ],
+        "location": "engine_block",
+        "color": "light_red",
+        "broken_color": "red",
+        "damage_modifier": 80,
+        "backfire_threshold": 0.25,
+        "backfire_freq": 20,
+        "noise_factor": 0,
+        "damaged_power_factor": 0.25,
+        "flags": [ "ENGINE", "E_COMBUSTION", "E_ALTERNATOR", "E_HIGHER_SKILL", "E_HEATER" ],
+        "fuel_type": "fungal_fuel",
+        "fuel_options": [ "fungal_fuel" ],
+        "breaks_into": [
+          { "item": "steel_lump", "count": [ 30, 40 ] },
+          { "item": "steel_chunk", "count": [ 30, 40 ] },
+          { "item": "scrap", "count": [ 30, 40 ] }
+        ],
+        "requirements": {
+          "install": { "skills": [ [ "mechanics", 9 ] ], "time": "160 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+          "removal": { "skills": [ [ "mechanics", 7 ] ], "time": "130 m", "using": [ [ "vehicle_wrench_2", 1 ] ] },
+          "repair": {
+            "skills": [ [ "mechanics", 8 ] ],
+            "time": "160 m",
+            "using": [ [ "repair_welding_standard", 3 ], [ "repair_welding_alloys", 1 ], [ "vehicle_wrench_2", 1 ], [ "vehicle_screw", 1 ] ]
+          }
+        },
+        "damage_reduction": { "all": 100 }
+      },
+      {
+        "id": "v6_mushroom",
+        "copy-from": "engine_steam",
+        "type": "ENGINE",
+        "name": { "str": "mycelium cracking engine" },
+        "description": "A set of pressurized chambers full of specialized mold. When fed with water, these mold colonies thrive and expand and contract with immense force and speed, allowing high-tension pistons to be moved. Takes considerable effort to tend the fungal colonies to a workable state.",
+        "weight": "280000 g",
+        "volume": "57500 ml",
+        "price": 870000,
+        "price_postapoc": 10000
+      },
+      {
+        "result": "v6_mushroom",
+        "type": "recipe",
+        "activity_level": "MODERATE_EXERCISE",
+        "category": "CC_OTHER",
+        "subcategory": "CSC_OTHER_VEHICLE",
+        "skill_used": "fabrication",
+        "difficulty": 8,
+        "time": "600 m",
+        "reversible": true,
+        "autolearn": false,
+        "book_learn": [ [ "textbook_fabrication", 8 ], [ "welding_book", 9 ] ],
+        "using": [ [ "welding_standard", 20 ] ],
+        "proficiencies": [ { "proficiency": "prof_basic_engines" }, { "proficiency": "prof_welding_basic" } ],
+        "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SAW_M", "level": 1 } ],
+        "components": [
+          [ [ "pipe", 16 ] ],
+          [ [ "scrap", 90 ], [ "steel_chunk", 30 ], [ "steel_lump", 10 ] ],
+          [ [ "chain", 4 ] ],
+          [ [ "spring", 4 ] ],
+          [ [ "heattank", 1 ] ],
+          [ [ "filter_air", 1 ], [ "filter_air_makeshift", 1 ] ],
+          [ [ "cable", 40 ] ],
+          [ [ "frame", 1 ] ],
+          [ [ "steel_plate", 8 ] ],
+          [ [ "water", 150 ], [ "water_clean", 150 ] ],
+          [ ["veggy_tainted", 4] ]
+        ]
+      },
+      {
+        "id": "alternator_fungal",
+        "copy-from": "vehicle_alternator",
+        "type": "vehicle_part",
+        "name": { "str": "fungal alternator" },
+        "item": "alternator_fungal",
+        "looks_like": "alternator_motorbike",
+        "durability": 250,
+        "power": -75000,
+        "epower": 36000000,
+        "damage_modifier": 80,
+        "folded_volume": "1250 ml",
+        "breaks_into": [
+          { "item": "steel_lump", "count": [ 2, 5 ] },
+          { "item": "steel_chunk", "count": [ 2, 5 ] },
+          { "item": "scrap", "count": [ 2, 5 ] }
+        ],
+        "requirements": {
+          "install": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "vehicle_screw", 1 ] ] },
+          "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_screw", 1 ] ] },
+          "repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "adhesive", 1 ], [ "vehicle_screw", 1 ] ] }
+        },
+        "damage_reduction": { "all": 12 }
+      },
+      {
+        "type": "recipe",
+        "activity_level": "LIGHT_EXERCISE",
+        "result": "alternator_fungal",
+        "category": "CC_OTHER",
+        "subcategory": "CSC_OTHER_PARTS",
+        "skill_used": "electronics",
+        "skills_required": [ "fabrication", 9 ],
+        "difficulty": 4,
+        "time": "300 m",
+        "reversible": true,
+        "decomp_learn": 2,
+        "book_learn": [ [ "manual_electronics", 9 ], [ "manual_mechanics", 9 ] ],
+        "using": [ [ "soldering_standard", 4 ], [ "steel_tiny", 1 ] ],
+        "proficiencies": [ { "proficiency": "prof_elec_soldering" } ],
+        "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
+        "components": [ [ [ "cable", 400 ] ], [ [ "heattank", 1 ] ], [ [ "e_scrap", 20 ] ], [ [ "veggy_tainted", 2 ] ] ]
+      },
+      {
+        "id": "alternator_fungal",
+        "copy-from": "vehicle_alternator",
+        "type": "GENERIC",
+        "name": { "str": "fungal alternator" },
+        "description": "A system of chambers designed to be added to a fungal engine. Specialized molds encapsulated within expand and contract to allow the turning of ridiculously resistant dynamos. These molds are able to convert byproducts from the engine colony into food, then expand with incredible pressure, before sporulating and retracting, and the cycle repeats.",
+        "weight": "1100 g",
+        "volume": "1 L",
+        "price": 8000,
+        "price_postapoc": 250
+      }
+]

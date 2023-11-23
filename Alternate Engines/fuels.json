@@ -1,0 +1,67 @@
+[
+  {
+    "type": "material",
+    "id": "fungal_fuel",
+    "name": "fungal fuel",
+    "//": "Assumes refrigerated to below -33.3°C or PSI.  Liquid weight (5.15 lb/gal)/(.62 kg/l).  Energy density (liquid) 11.5 MJ/L)",
+    "specific_heat_liquid": 3.13,
+    "specific_heat_solid": 4.22,
+    "latent_heat": 332,
+    "density": 1,
+    "bash_resist": 0,
+    "cut_resist": 0,
+    "bullet_resist": 0,
+    "acid_resist": 0,
+    "fire_resist": 0,
+    "elec_resist": 0,
+    "chip_resist": 0,
+    "dmg_adj": [ "lightly damaged", "damaged", "very damaged", "thoroughly damaged" ],
+    "bash_dmg_verb": "damaged",
+    "cut_dmg_verb": "damaged",
+    "freezing_point": -77.73,
+    "fuel_data": { "energy": "11500000 kJ" }
+  },
+  {
+    "type": "ammunition_type",
+    "id": "fungal_fuel",
+    "name": "fungal fuel",
+    "default": "fungal_fuel"
+  },
+  {
+    "id": "fungal_fuel",
+    "type": "AMMO",
+    "name": { "str_sp": "fungal fuel" },
+    "description": "A liquid made of water, salt, and sugar prepared at a low temperature to foster bacterial growth. It can be used as fuel for specialized fungal machines.",
+    "category": "fuel",
+    "weight": "810 mg",
+    "volume": "200ml",
+    "price": 6,
+    "price_postapoc": 3,
+    "count": 250,
+    "stack_size": 200,
+    "phase": "liquid",
+    "container": "bottle_plastic",
+    "sealed": false,
+    "symbol": "=",
+    "color": "white",
+    "material": [ "fungal_fuel" ],
+    "ammo_type": "fungal_fuel"
+  },
+  {
+    "result": "fungal_fuel",
+    "type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "category": "CC_CHEM",
+    "subcategory": "CSC_CHEM_FUEL",
+    "skill_used": "chemistry",
+    "difficulty": 0,
+    "time": "1 m",
+    "book_learn": [ [ "textbook_chemistry" ], [ "distilling_cookbook", 4 ] ],
+    "qualities": [ { "id": "BOIL", "level": 2 }, { "id": "DISTILL", "level": 2 } ],
+    "tools": [ [ [ "surface_heat", 30, "LIST" ] ], [ [ "thermometer", -1 ] ] ],
+    "components": [ [ [ "water", 14 ], ["water_clean", 14] ],
+                    [ ["salt", 2] ],
+                    [ ["sugar", 10 ] ] 
+                  ]
+  }
+]
